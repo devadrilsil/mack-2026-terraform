@@ -1,5 +1,9 @@
-resource "aws_glue_catalog_database" "athena_db" {
-  name = var.athena_db
+resource "aws_glue_catalog_database" "athena_db_raw" {
+  name = "${var.athena_db}_raw"
+}
+
+resource "aws_glue_catalog_database" "athena_db_refined" {
+  name = "${var.athena_db}_refined"
 }
 
 resource "aws_athena_workgroup" "main" {
